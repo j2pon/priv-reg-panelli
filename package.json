@@ -1,0 +1,17 @@
+{
+    "name": "priv-reg-panelli",
+    "version": "1.0.0",
+    "description": "@j2pon priv register v2",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "discord.js": "^14.16.3",
+        "fs" : "",
+        "mysql2" : "",
+        "sequelize" : ""
+    },
+    "author": "@j2pon",
+    "license": "ISC"
+}

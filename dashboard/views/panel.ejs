@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Kontrol Paneli</title>
+</head>
+<body>
+  <h1>Ban Listesi</h1>
+  <form method="POST" action="/panel/ban/add">
+    <input type="text" name="userId" placeholder="Kullanıcı ID">
+    <button type="submit">Ekle</button>
+  </form>
+  <ul>
+    <% banUsers.forEach(u => { %>
+      <li><%= u.userId %>
+        <form method="POST" action="/panel/ban/remove" style="display:inline;">
+          <input type="hidden" name="userId" value="<%= u.userId %>">
+          <button type="submit">Kaldır</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+
+  <h1>Ucube Listesi</h1>
+  <form method="POST" action="/panel/ucube/add">
+    <input type="text" name="userId" placeholder="Kullanıcı ID">
+    <button type="submit">Ekle</button>
+  </form>
+  <ul>
+    <% ucubeUsers.forEach(u => { %>
+      <li><%= u.userId %>
+        <form method="POST" action="/panel/ucube/remove" style="display:inline;">
+          <input type="hidden" name="userId" value="<%= u.userId %>">
+          <button type="submit">Kaldır</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+
+  <a href="/logout">Çıkış Yap</a>
+</body>
+</html>
